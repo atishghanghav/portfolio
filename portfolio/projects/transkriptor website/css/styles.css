@@ -1,0 +1,802 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700&display=swap');
+
+:root{
+    --text_color: #05294b;
+    --white: #fff;
+
+    --fs_larger: 2.5rem; /* 40px */
+    --fs_large: 2rem; /* 32px */
+    --fs_medium: 1.875rem; /* 30px */
+    --fs_regular: 1.5625rem; /* 25px*/
+    --fs_small: 1.25rem; /* 20px */
+    --fs_smaller: 1.125rem; /* 18px */
+    --fs_extra_small: 1rem; /* 16px */
+
+    --pd: 7rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+/* ====================== general ====================== */
+
+.title{
+    font-size: var(--fs_larger);
+    color: var(--text_color);
+    text-transform: capitalize;
+}
+
+.sub_title{
+    font-size: var(--fs_medium);
+    color: var(--text_color);
+    text-transform: capitalize;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text_color);
+    font-size: var(--fs_extra_small);
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.btn{
+    padding: 0.5rem 1.4rem 0.4rem;
+    border: 1px solid var(--text_color);
+    outline: transparent;
+    border-radius: 2rem;
+    transition: 0.4s;
+}
+
+p{
+    font-size: var(--fs_extra_small);
+    font-weight: 500;
+}
+
+.container{
+    padding: 0 var(--pd);
+    display: flex;
+    color: var(--text_color);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text_container,
+.image_container{
+    flex-basis: 45%;
+}
+
+.h_black:hover{
+    background-color: var(--text_color);
+    color: var(--white);
+    
+}
+
+.h_white{
+    background-color: var(--text_color);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.h_white:hover{
+    background-color: var(--white);
+    color: var(--text_color);
+    font-weight: 300;
+}
+.dropdown_content{
+    display: none;
+}
+
+/* ========================== navbar ========================== */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem var(--pd);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    background-color: var(--white);
+}
+
+.navbar .logo_container{
+    margin-right: 5.5rem;
+    width: 160px;
+    display: flex;
+    cursor: pointer;
+}
+
+.navbar nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.navbar nav ul{
+    display: inline-flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navbar nav ul li a{
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #007aff;
+    transition: width 0.3s;
+    transform: translateX(-50%);
+    
+}
+
+.navbar nav ul li a:hover::after{
+    width: 100%;
+}
+
+.navbar nav ul li a:hover{
+    color: #007aff;
+}
+
+.navbar nav ul .dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.navbar nav ul .dropdown .dropdown_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: -40%;
+    background-color: #f1f1f1;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.navbar nav ul .dropdown:hover .dropdown_content{
+    max-height: 400px;
+}
+
+.navbar nav ul .dropdown .dropdown_content a{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 1rem;
+}
+.navbar nav ul .dropbtn{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar .btn_container{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar .toggle_btn_container{
+    display: none;
+}
+
+/* ========================== Hero section ========================== */
+
+.hero_container{
+    height: 100dvh;
+    height: 78vh;
+}
+
+.hero_container .container{
+    padding: 0 var(--pd);
+    display: flex;
+    margin: 10rem auto 0;
+    color: var(--text_color);
+    gap: 0.5rem;
+}
+
+.hero_container .container .hero_text_container{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.hero_container .container .hero_text_container p{
+    font-size: var(--fs_small);
+    font-weight: 500;
+    margin: 2rem 0;
+}
+
+.hero_container .container .hero_text_container a{
+    display: block;
+    width: 130px;
+    margin: 2rem auto;
+    padding: 0.4rem;
+    font-size: var(--fs_smaller);
+}
+
+.hero_container .container .hero_text_container span{
+    font-weight: 500;
+}
+
+.hero_container .hero_video_container{
+    flex-basis: 50%;
+}
+
+.hero_container .hero_video_container iframe{
+    width: 100%;
+    height: 20rem;
+    cursor: pointer;
+}
+.hero_container .wave_container{
+    overflow: hidden;
+}
+.hero_container .wave_container .wave{
+    width: calc(100% + 40px);
+    height: 72px;
+    
+}
+
+.hero_container .wave_container .wave_first{
+    transform: rotate(180deg) translateY(-11px) translateX(11px);
+}
+
+.hero_container .wave_second{
+    transform: translateX(-11px);
+}
+
+.hero_container .customers{
+    font-size: var(--fs_small);
+    font-weight: 600;
+    color: var(--text_color);
+    text-align: center;
+    transform: translateY(-27px);
+}
+
+/* ========================== benefit section ========================== */
+
+.benefit .logo_trustpilot{
+    width: 120px;
+    margin: 1rem auto;
+}
+
+.benefit .rating{
+    margin: 1rem 0 5rem;
+    font-size: var(--fs_smaller);
+    font-weight: 300;
+    text-align: center;
+}
+
+.container:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.container:nth-child(3) .image_container img{
+    border-radius: 15px;
+}
+.container:nth-child(4) .image_container img{
+    border-radius: 15px;
+}
+.container:nth-child(5) .image_container img{
+    border-radius: 15px;
+}
+.benefit .container .text_container .sub_title{
+    margin-bottom: 2rem;
+}
+
+/* ========================== feature section ========================== */
+.feature_container{
+    padding: 4rem var(--pd);
+}
+
+.feature_container .title,
+.account_opening_process .title{
+    text-align: center;
+}
+
+.feature_container .features{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+.feature_container .features div{
+    flex-basis: 30%;
+}
+
+.feature_container .features svg,
+.account_opening_process .features svg{
+    width: 5rem;
+    height: 5rem;
+}
+
+.feature_container .features p,
+.account_opening_process .features p{
+    font-size: var(--fs_extra_small);
+}
+
+/* ========================== account Opening section ========================== */
+.account_opening_process{
+    padding: 0 var(--pd);
+}
+
+.account_opening_process .features{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin: 3rem 0;
+}
+
+.account_opening_process .features h3,
+.feature_section .features h3{
+    font-size: var(--fs_regular);
+    color: var(--text_color);
+    font-weight: 600;
+    margin: 2rem 0;
+    text-transform: capitalize;
+}
+
+.account_opening_process .slider_container .swiper .swiper-wrapper .swiper-slide{
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 4rem;
+    font-family: 'Baloo Tamma 2', cursive;
+    color: #05294B;
+    gap: 0.5rem;
+    margin: 5rem 0;
+
+}
+
+.account_opening_process .slider_container .swiper .swiper-wrapper .swiper-slide .profile_container{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    gap: 1rem;
+    
+}
+
+.account_opening_process .slider_container .swiper .swiper-wrapper .swiper-slide img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.account_opening_process .slider_container .swiper .swiper-wrapper .swiper-slide h4{
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-bottom: -0.5rem;
+}
+
+.account_opening_process .slider_container .swiper .swiper-wrapper .swiper-slide span{
+    font-size: 0.9rem;
+}
+
+.account_opening_process .slider_container .swiper .swiper-button-next:after, 
+.account_opening_process .slider_container .swiper .swiper-button-prev:after{
+    font-size: 20px;
+    color: #05294B;
+    font-weight: 600;
+}
+
+/* ========================== features section ========================== */
+.feature_section .features{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    margin: 3rem 0;
+}
+.feature_section .paragraph{
+    font-size: var(--fs_extra_small);
+    text-align: center;
+}
+
+.feature_section .features h3{
+    margin: 0.5rem 0;
+}
+.feature_section .features svg{
+    width: 3rem;
+    height: 3rem;
+}
+
+/* ========================== download section ========================== */
+.download_app{
+    padding: 3rem var(--pd);
+    text-align: center;
+}
+
+.download_app p{
+    font-weight: 500;
+    font-size: var(--fs_extra_small);
+    margin-top: 2rem;
+}
+
+.download_app .image_container{
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.download_app .download_links_container{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.download_app .download_links_container a{
+    font-size: var(--fs_small);
+    padding: 0.4rem 1.4rem;
+}
+
+/* ========================== subcription plan section ========================== */
+.subcription_plan{
+    padding: 1rem var(--pd);
+    text-align: center;
+}
+.subcription_plan .title{
+    margin-bottom: 1rem;
+}
+.subcription_plan .plans{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 5rem 0;
+}
+
+.subcription_plan .plans .plan_container .image_container{
+    width: 115px;
+    margin: 1rem auto;
+}
+
+.subcription_plan .plans .plan_one .sub_title,
+.subcription_plan .plans .plan_one p{
+    color: #a60298ff;
+}
+
+.subcription_plan .plans .plan_container p{
+    font-size: var(--fs_extra_small);
+    margin: 1rem 0 3rem;
+}
+
+.subcription_plan .plans .plan_container .wd{
+    width: 195px;
+}
+
+.subcription_plan .plans .plan_container .btn{
+    padding: 0.8rem 1.8rem;
+}
+.subcription_plan .plans .plan_one .plan_btn{
+    background-color: #a60298ff;
+    border-color: #a60298ff;
+    color: var(--white);
+}
+
+.subcription_plan .plans .plan_one .plan_btn:hover{
+    color: #a60298ff;
+    background-color: var(--white);
+}
+.subcription_plan .plans .plan_two .plan_btn{
+    background-color: var(--text_color);
+    color: var(--white);
+}
+
+.subcription_plan .plans .plan_two .sub_title,
+.subcription_plan .plans .plan_two p{
+    color: var(--text_color);
+}
+
+.subcription_plan .plans .plan_two .plan_btn:hover{
+    background-color: var(--white);
+    color: #047cfc;
+    border-color: #047cfc;
+}
+
+.subcription_plan .plans .plan_three .sub_title,
+.subcription_plan .plans .plan_three p{
+    color: #ff9819;
+}
+.subcription_plan .plans .plan_three .plan_btn{
+    background-color: #ff9819;
+    border-color: #ff9819;
+    color: var(--white);
+}
+
+.subcription_plan .plans .plan_three .plan_btn:hover{
+    color: #ff9819;
+    background-color: var(--white);
+}
+
+/* ========================== subcription plan section ========================== */
+
+
+footer{
+    background: var(--text_color);
+    padding: 5rem var(--pd);
+    color: var(--white);
+    display: flex;
+
+}
+
+footer .image_container{
+    width: 140px;
+}
+
+footer p{
+    margin: 1rem 0 2rem;
+}
+
+footer a{
+    font-weight: 300;
+    color: #007AFF;
+}
+
+footer .resources_container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer .resources_container a{
+    color: var(--white);
+}
+
+footer .resources_container a i{
+    margin-right: 0.5rem;
+}
+
+footer .device_downlaod_link{
+    margin-right: 5rem;
+}
+
+footer .device_downlaod_link img{
+    width: 250px;
+    display: flex;
+    margin: 1rem 0;
+}
+
+
+/* ======================== media query ========================== */
+
+/* ========== 1024px ===============*/
+@media (max-width: 1024px) {
+
+    :root{
+        --pd: 3rem;
+    }
+
+    .benefit .logo_trustpilot{
+        margin: 5rem auto 1rem;
+    }
+
+    .container{
+        margin: 1rem 0;
+    }
+
+    .download_app .download_links_container{
+        gap: 1rem;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    :root{
+        --pd: 2rem;
+    }
+
+    .navbar .logo_container {
+        margin-right: 3.5rem;
+    
+    }
+    .navbar .h_black{
+        padding: 0.3rem 1rem;
+    }
+    .btn {
+        padding: 0.4rem 1rem 0.4rem;
+    }
+
+    .hero_container .container .hero_text_container{
+        flex-basis: 100%;
+    }
+
+    .hero_container .hero_video_container{
+        display: none;
+    }
+
+    .download_app .image_container{
+        margin-bottom: 1rem;
+    }
+
+    .download_app .download_links_container{
+        flex-direction: column;
+    }
+
+    .subcription_plan .plans {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .subcription_plan .plans .plan_three .plan_btn{
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    footer .image_container{
+        margin-top: 0.6rem;
+    }
+
+    footer p{
+        margin: 1rem 0;
+    }
+
+    footer .device_downlaod_link {
+        margin-right: 0;
+    }
+
+    footer .device_downlaod_link img{
+        width: 200px;
+    }
+}
+
+
+@media (max-width: 425px) {
+    :root{
+        --pd: 1rem;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+    .navbar nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column-reverse;
+        background: var(--white);
+        height: 0px;
+        z-index: 9999;
+        overflow: hidden;
+        transition: 0.5s ease;
+    }
+
+    .navbar.active nav{
+        height: 450px;
+    }
+
+    .navbar nav ul{
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+    }
+
+    .navbar nav ul li{
+        width: 100%;
+    }
+    .navbar nav ul li a{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        display: block;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: var(--fs_small);
+    }
+
+    .navbar nav ul .dropbtn img{
+        width: 20px;
+    }
+
+    .navbar .btn_container{
+        flex-direction: column;
+        width: 100%;
+        align-items: start;
+        gap: 0;
+    }
+
+    .navbar .btn_container .btn{
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        color: var(--text_color);
+        padding: 1.5rem;
+        font-size: var(--fs_small);
+    }
+
+    .navbar .toggle_btn_container{
+        display: block;
+        font-size: 2rem;
+        color: var(--swiper-theme-color);
+    }
+
+    .navbar .toggle_btn_container .menu_close{
+        display: none;
+    }
+
+    .hero_container .customers{
+        padding: var(--pd);
+    }
+
+    .benefit .logo_trustpilot{
+        width: 230px;
+        margin-top: 10rem;
+    }
+
+    .container,
+    .container:nth-child(even){
+        flex-direction: column;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .sub_title{
+        margin-bottom: 0;
+    }
+
+    .feature_container .features{
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .account_opening_process .features,
+    .feature_section .features{
+        text-align: center;
+    }
+
+    .account_opening_process .features h3, 
+    .feature_section .features h3{
+        margin: 1rem 0;
+    }
+
+    .subcription_plan .plans{
+        gap: 5rem;
+    }
+
+    footer{
+        position: relative;
+    }
+    footer .device_downlaod_link{
+        position: absolute;
+        bottom: 54px;
+    }
+
+    .address,
+    footer .device_downlaod_link .download{
+        display: none;
+    }
+
+    footer .device_downlaod_link img{
+        width: 180px;
+        margin: 0;
+    }
+}

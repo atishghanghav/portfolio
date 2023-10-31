@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --bg: #fff1ec;
+    --text_color: #141414;
+    --text_color2: #61605f;
+    --hover_color: #474746;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    font-size: 1.2rem;
+    background-color: var(--bg);
+}
+
+.btn{
+    background-color: var(--text_color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10rem;
+    color: white;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 1.2;
+}
+
+.navbar .logo_container span{
+    font-size: 3rem;
+    color: var(--text_color);
+    font-weight: 600;
+}
+
+.hero_container{
+    background-color: var(--bg);
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 0 5rem;
+    min-height: 85vh;
+}
+
+.hero_container .text_container,
+.hero_container .img_container{
+    flex: 1;
+}
+
+.hero_container .text_container .title{
+    font-size: 3.5rem;
+    color: var(--text_color);
+}
+
+.hero_container .text_container ul{
+    margin: 2rem 1rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.hero_container .text_container h4{
+    max-width: 300px;
+    font-size: 0.9rem;
+}
+
+.hero_container .text_container .notify_container{
+    margin: 2rem 0;
+}
+
+.hero_container .text_container .notify_container input{
+    width: 223px;
+    padding: 0.5rem;
+}
+
+.hero_container .text_container .notify_container button{
+    background-color: var(--text_color);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 5rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.hero_container .text_container .notify_container button:hover,
+.btn:hover{
+    background-color: var(--hover_color);
+}
+
+@media (max-width: 768px) {
+    .hero_container{
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 3rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .navbar{
+        padding: 1rem;
+    }
+    .navbar .logo_container span{
+        font-size: 2rem;
+    }
+
+    .btn{
+        font-size: 1rem;
+    }
+
+    .hero_container{
+        padding: 1rem;
+    }
+
+    .hero_container .text_container .title{
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero_container .text_container .title{
+        font-size: 2rem;
+    }
+
+    .hero_container .text_container ul{
+        font-size: 1rem;
+    }
+    .hero_container .text_container .notify_container input{
+        margin-bottom: 1rem;
+    }
+
+    .hero_container .text_container .notify_container button{
+        margin: 0;
+    }
+
+}
